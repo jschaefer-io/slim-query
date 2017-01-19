@@ -19,7 +19,7 @@ gulp.task('build', function () {
 });
 
 gulp.task('watch', function () {
-    return watch('./src/*.js', function () {
+    return watch('./src/**/*.js', function () {
         gulp.src(files)
         	.pipe(concat('slimQuery.js'))
             .pipe(gulp.dest('dist'));

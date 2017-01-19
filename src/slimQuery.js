@@ -17,11 +17,13 @@
 			return this;
 		};
 		this.on = function(name, handler){
-			var test = true;
+			if (name === 'ready') {
+				name = 'DOMContentLoaded';
+			};
 			this.each(function(item){
 				item.addEventListener(name, handler);
 			});
-			
+			return this;
 		};
 		this.each = function(handler){
 			for(var item in this.data){
@@ -30,7 +32,13 @@
 				}
 			}
 		};
-
+		this.get = function(key){
+			if (key === undefined) {
+				return this.data;
+			}
+			return this.data[key];
+		}
+		
 		if (query) {
 			var type = typeof query;
 			if (type == 'string') {
