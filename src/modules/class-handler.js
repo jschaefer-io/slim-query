@@ -31,7 +31,7 @@ slimquery.extend({
 		this.each(function(item){
 			for(var name in classes){
 				if (!sq(item).hasClass(classes[name])) {
-					item.className += ' ' + classes[name];
+					item.className += ' ' + classes[name].trim();
 				}
 			}
 		});
@@ -50,8 +50,23 @@ slimquery.extend({
 						}
 					}
 				}
-				item.className = names.join(' ');
+				item.className = names.join(' ').trim();
 			}			
+		});
+		return this;
+	},
+	'toggleClass': function(classname){
+		var classes = classname.split(' ');
+		this.each(function(item){
+			var current = sq(item);
+			for(var name in classes){
+				if (current.hasClass(classes[name])) {
+					current.removeClass(classes[name]);
+				}
+				else{
+					current.addClass(classes[name]);
+				}
+			}	
 		});
 		return this;
 	}
