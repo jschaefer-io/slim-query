@@ -6,7 +6,7 @@ slimquery.extend({
 			set = Array.from(item.querySelectorAll(query));
 			if (set.length > 0) {
 				for (var i = 0; i < set.length; i++) {
-					if (slimquery.__isIn(set[i], list)) {
+					if (!slimquery.__isIn(set[i], list)) {
 						list.push(set[i]);
 					}
 				}
@@ -51,9 +51,9 @@ slimquery.extend({
 			parent;
 		this.each(function(item){
 			parent = sq(item).parent();
-			while(parent.get(0) !== undefined){
-				if (slimquery.__isIn(parent.get(0), list)) {
-					if (!slimquery.__isIn(parent.get(0), elements)) {
+			while(parent.length > 0){
+				if (!slimquery.__isIn(parent.get(0), list)) {
+					if (slimquery.__isIn(parent.get(0), elements)) {
 						list.push(parent.get(0));
 					}
 				}
@@ -79,7 +79,7 @@ slimquery.extend({
 					list.push(childs[i]);
 				}
 				else{
-					if (!slimquery.__isIn(childs[i], elements)) {
+					if (slimquery.__isIn(childs[i], elements)) {
 						list.push(childs[i]);		
 					}
 				}
@@ -95,7 +95,7 @@ slimquery.extend({
 			if (sq(item).parent() !== null) {
 				sibs = sq(item).parent().children(query).get();
 				for (var i = sibs.length - 1; i >= 0; i--) {
-					if (!item.isSameNode(sibs[i]) && slimquery.__isIn(sibs[i], list)) {
+					if (!item.isSameNode(sibs[i]) && !slimquery.__isIn(sibs[i], list)) {
 						list.push(sibs[i]);
 					}
 				}

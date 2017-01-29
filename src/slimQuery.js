@@ -21,10 +21,10 @@
 			this.__isIn = function(item, set){
 				for (var i = set.length - 1; i >= 0; i--) {
 					if (item.isSameNode(set[i])) {
-						return false;
+						return true;
 					}
 				}
-				return true;
+				return false;
 			}
 			return this;
 		}

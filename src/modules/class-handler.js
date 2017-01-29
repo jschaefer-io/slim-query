@@ -3,7 +3,7 @@ slimquery.extend({
 		var classes = classname.split(' '),
 			check = true,
 			item;
-		if (this.get(0) !== undefined) {
+		if (this.length() > 0) {
 			item = this.get(0);
 			if (item.className !== undefined) {
 				var values = item.className.split(' '),
@@ -22,6 +22,16 @@ slimquery.extend({
 						}
 					}
 				}
+			}
+		}
+		return check;
+	},
+	'is': function(query){
+		var query = sq(query),
+			check = false;
+		if (this.length() > 0) {
+			if (slimquery.__isIn(this.get(0), query.get())) {
+				check = true;
 			}
 		}
 		return check;
