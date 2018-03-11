@@ -4,9 +4,8 @@
   "description": "Lightweight jQuery alternative",
   "main": "dist/slimQuery.js",
   "scripts": {
-    "prepublish": "npm run build",
-    "dev": "gulp watch",
-    "build": "gulp build"
+    "prepublish": "node build.js",
+    "doc": "jsdoc -t node_modules/minami/ -R README.md -d doc src src/modules --verbose"
   },
   "repository": {
     "type": "git",
@@ -15,9 +14,17 @@
   "author": "jschaefer-io <me@jschaefer.io>",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-jsmin": "^0.1.5",
-    "gulp-watch": "^4.3.11"
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "colors": "^1.2.0",
+    "concat": "^1.0.3",
+    "glob": "^7.1.2",
+    "install": "^0.10.4",
+    "jsdoc": "^3.5.5",
+    "jsmin": "^1.0.1",
+    "make-dir": "^1.2.0",
+    "minami": "^1.2.3",
+    "npm": "^5.7.1",
+    "write-file-atomic": "^2.3.0"
   }
 }
