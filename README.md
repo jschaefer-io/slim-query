@@ -40,7 +40,7 @@ SlimQuery.extend({
 SlimQuery.hello();
 
 // Access static API through a SlimQuery Object
-$(document).api.hello();
+sq(document).api.hello();
 ```
 
 ### Generating Elements from Strings
