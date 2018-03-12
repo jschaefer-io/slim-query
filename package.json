@@ -1,6 +1,6 @@
 {
   "name": "slim-query",
-  "version": "1.0.5",
+  "version": "1.1.1",
   "description": "Lightweight jQuery alternative",
   "main": "dist/slimQuery.js",
   "scripts": {
