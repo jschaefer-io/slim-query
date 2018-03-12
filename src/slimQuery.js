@@ -14,6 +14,13 @@ class SlimQuery{
 	 */
 	constructor(query, base = document){
 		let type = typeof query;
+
+		/**
+		 * Storage for the current SlimQuery Objects Elements
+		 * @var {Array} data - Element Nodes
+		 * @memberof SlimQuery
+		 */
+		this.data = [];
 		if (type === 'string') {
 			this.data = Array.from(base.querySelectorAll(query));
 		}
@@ -21,10 +28,15 @@ class SlimQuery{
 			if( Array.isArray(query) ){
 				this.data = query;
 			}
-			else{
+			else if(query){
 				this.data = [query];
 			}
 		}
+		/**
+		 * Instanced access to the static SlimQuery API
+		 * @var {SlimQuery} api
+		 * @memberof SlimQuery
+		 */
 		this.api = this.constructor;
 	}
 
