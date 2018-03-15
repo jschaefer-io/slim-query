@@ -137,18 +137,6 @@ class SlimQuery{
 	}
 
 	/**
-	 * Clones the current Nodes and returns a new SlimQuery Instance with them
-	 * @return {SlimQuery} new SlimQuery Instance containing the cloned nodes
-	 */
-	clone(){
-		let list = [];
-		this.each((item)=>{
-			list.push(item.cloneNode(true));
-		});
-		return this.spawn(list);
-	}
-
-	/**
 	 * Iterates every Node in the SlimQuery Object
 	 * @param  {Function} handler - function to call on each item
 	 * @return {SlimQuery} unaltered SlimQuery Object

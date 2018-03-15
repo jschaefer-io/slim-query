@@ -1,6 +1,3 @@
-'use strict';
-
-
 /**
  * This Module contains functions to listen and dispatch event
  * @module Events

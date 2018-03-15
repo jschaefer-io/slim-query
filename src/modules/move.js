@@ -1,6 +1,3 @@
-'use strict';
-
-
 /**
  * This Module contains functions to move elements around the DOM
  * @module Move

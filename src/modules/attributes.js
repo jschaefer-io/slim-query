@@ -1,6 +1,3 @@
-'use strict';
-
-
 /**
  * This Module contains functions to manipulate Attributes
  * @module Attributes
