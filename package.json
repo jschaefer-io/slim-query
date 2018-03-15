@@ -9,22 +9,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jschaefer-io/slim-query"
+    "url": "git+https://github.com/jschaefer-io/slim-query.git"
   },
   "author": "jschaefer-io <me@jschaefer.io>",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
     "colors": "^1.2.0",
     "concat": "^1.0.3",
     "glob": "^7.1.2",
-    "install": "^0.10.4",
     "jsdoc": "^3.5.5",
     "jsmin": "^1.0.1",
     "make-dir": "^1.2.0",
     "minami": "^1.2.3",
-    "npm": "^5.7.1",
     "write-file-atomic": "^2.3.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/jschaefer-io/slim-query/issues"
+  },
+  "homepage": "https://github.com/jschaefer-io/slim-query#readme",
+  "dependencies": {},
+  "keywords": [
+    "alternative",
+    "jquery",
+    "slimquery"
+  ]
 }

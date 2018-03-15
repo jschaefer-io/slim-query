@@ -1,6 +1,5 @@
 'use strict';
 
-const babel = require('babel-core');
 const concat = require('concat');
 const glob = require('glob');
 const jsmin = require('jsmin').jsmin;
@@ -10,29 +9,18 @@ const makeDir = require('make-dir');
 const colors = require('colors');
 
 glob('src/**/*.js',{}, (err, files)=>{
+	if (err)
+		throw err;
+
 	files.sort((a,b)=>{
 		if (a.split('/').length < b.split('/').length) return -1;
 		if (a.split('/').length > b.split('/').length) return 1;
 		return 0;
 	});
-
-	if (err) {
-		throw err;
-	}
 	concat(files).then((result)=>{
-		result = babel.transform(result, {
-			presets: [
-				['env', {
-					targets: {
-						browsers: ['last 2 versions']
-					}
-				}]
-			]
-		});
-
 		let files = {
-			'slimQuery': result.code,
-			'slimQuery-min': jsmin(result.code)
+			'slimQuery': result,
+			'slimQuery-min': jsmin(result)
 		};
 		makeDir('dist').then(dirPath => {
 			dirPath += path.sep;
@@ -42,7 +30,7 @@ glob('src/**/*.js',{}, (err, files)=>{
 					if (err) {
 						throw err;
 					}
-					console.log( colors.green('Saved:' + "\t" + name + '.js'));
+					console.log( colors.green('Saved:') + "\t" + colors.blue(name + '.js'));
 				});
 			}
 		});
