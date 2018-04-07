@@ -19,8 +19,8 @@ glob('src/**/*.js',{}, (err, files)=>{
 	});
 	concat(files).then((result)=>{
 		let files = {
-			'slimQuery': result,
-			'slimQuery-min': jsmin(result)
+			'slim-query': result,
+			'slim-query-min': jsmin(result)
 		};
 		makeDir('dist').then(dirPath => {
 			dirPath += path.sep;
