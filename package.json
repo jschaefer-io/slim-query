@@ -12,7 +12,7 @@
     "url": "git+https://github.com/jschaefer-io/slim-query.git"
   },
   "author": "jschaefer-io <me@jschaefer.io>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "colors": "^1.2.0",
     "concat": "^1.0.3",
